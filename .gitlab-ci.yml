@@ -4,6 +4,9 @@ stages:
   - build
   - release
 
+services:
+- docker:dind
+
 before_script:
   - "pwd"
   - "docker info"
@@ -19,7 +22,8 @@ build:
     - docker
   script:
     - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME .
-    - "docker push $CI_REGISTRY/$CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME"
+    - docker push $CI_REGISTRY/$CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+    - docker rmi $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
 
 release-latest:
   stage: release
