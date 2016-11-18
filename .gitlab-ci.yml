@@ -1,8 +1,8 @@
 image: "docker:latest"
 
 stages:
-- build
-- release
+  - build
+  - release
 
 before_script:
   - "pwd"
@@ -35,4 +35,4 @@ release-latest:
     - docker push $CI_REGISTRY_IMAGE:latest
     - docker rmi $CI_REGISTRY_IMAGE:latest
   only:
-- master
+    - master
