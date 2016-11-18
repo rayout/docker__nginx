@@ -7,6 +7,9 @@ stages:
 services:
 - docker:dind
 
+variables:
+  DOCKER_DRIVER: overlay
+
 before_script:
   - "pwd"
   - "docker info"
@@ -14,7 +17,7 @@ before_script:
 
 after_script:
   - "docker images"
-  - "docker logout $$CI_REGISTRY"
+  - "docker logout $CI_REGISTRY"
 
 build:
   stage: build
