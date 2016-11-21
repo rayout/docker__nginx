@@ -2,7 +2,6 @@ FROM nginx:latest
 
 MAINTAINER Shapovalov Alexandr <alex_sh@kodeks.ru>
 
-RUN mkdir /var/log/nginx
 ADD nginx.conf /etc/nginx/
 ADD site.conf /etc/nginx/sites-available/
 ADD setenv.sh /tmp/
