@@ -13,6 +13,6 @@ RUN usermod -u 1000 www-data
 
 WORKDIR /
 
-CMD ["/bin/bash", "-c", "/tmp/setenv.sh ${HOST} && nginx"]
+CMD ["/bin/bash", "-c", "/tmp/setenv.sh \"${HOST}\", \"${PUBLIC_PATH}\" && nginx"]
 
 EXPOSE 80 443
