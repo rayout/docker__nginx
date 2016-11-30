@@ -5,5 +5,6 @@
     nginx:
         image: gitlab.kodeks.ru:4567/docker/nginx
         volumes:
-            - ./docker/nginx/site.conf:/etc/nginx/sites-aviable/site.conf
+            - ./docker/nginx/site.conf:/etc/nginx/sites-available/site.conf
+        command: nginx        
 ```        
