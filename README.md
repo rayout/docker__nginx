@@ -1,3 +1,8 @@
+Has this environments:
+
+HOST: site address
+PUBLIC_PATH: where to find index
+
 Если нужно передать свой конфиг?
 
 Можно передать вот так. (заменить текущий конфиг). Либо другое название файла, и тогда добавит.
